@@ -1,2 +1,2 @@
-/australia-latest.osm.pbf
-
+*.pbf
+*-runner.sh
