@@ -8,6 +8,7 @@ fi
 TOKEN=$(echo -n $SLIP_USER':'$SLIP_PASS | base64 -w 0)
 URL="https://maps.slip.wa.gov.au/datadownloads/MRWA_Public_Services/MRWA_Public_Secure_Services/RoadNetworkMRWA_514/RoadNetworkMRWA_514.zip"
 SHPZIP=RoadNetwork_MRWA_514.zip
+curl --version
 echo "Downloading shapefile"
 curl --location --cookie --verbose \
 	-H "User-Agent: QGIS" -H "Authorization: Basic "$TOKEN \
@@ -21,7 +22,7 @@ fi
 ## Check size in Mb
 ZIPSIZE=$(du -m "$SHPZIP" | cut -f 1)
 if [[ $ZIPSIZE < 20 ]]; then
-	echo "Zip file was only $ZIPSIZE"
+	echo "Zip file was not large enough (only $ZIPSIZE Mb). Contents:"
 	cat $SHPZIP
 	exit 1
 fi
