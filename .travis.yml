@@ -2,7 +2,7 @@ language: python
 
 install:
   - git clone https://github.com/pnorman/ogr2osm
-  - pip install osgeo
+  - sudo apt-get install python-gdal
 
 script:
   - ./mrwa2osm.sh

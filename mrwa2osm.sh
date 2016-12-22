@@ -21,4 +21,9 @@ echo "Unzipping downloaded shapefile"
 unzip -d shp "$SHPZIP"
 
 echo "Converting to OSM format"
-python ogr2osm/ogr2osm.py shp/RoadNetworkMRWA_514_1.shp -o docs/RoadNetworkMRWA_514.osm
+OSMFILE="docs/RoadNetworkMRWA_514.osm"
+python ogr2osm/ogr2osm.py shp/RoadNetworkMRWA_514_1.shp -o "$OSMFILE"
+
+git add "$OSMFILE"
+git commit -m"Updated from Slip"
+git push "https://${GH_TOKEN}@github.com/geogeeks-au/MainRoads-to-OSM.git" master:master
