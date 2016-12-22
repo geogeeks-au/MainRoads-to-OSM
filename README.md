@@ -1,6 +1,8 @@
 Main Roads to OSM
 =================
 
+[![Build Status](https://travis-ci.org/geogeeks-au/MainRoads-to-OSM.svg?branch=master)](https://travis-ci.org/geogeeks-au/MainRoads-to-OSM)
+
 [![Stories in Ready](https://badge.waffle.io/geogeeks-au/MainRoads-to-OSM.png?label=ready&title=Ready)](http://waffle.io/geogeeks-au/MainRoads-to-OSM)
 
 Getting missing roads into OSM.

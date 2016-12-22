@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if (test -z $SLIP_USER -o -z $SLIP_PASS); then
+if [[ -z "$SLIP_USER" || -z $SLIP_PASS ]]; then
 	echo "Please set SLIP_USER and SLIP_PASS env vars"
 	exit 1
 fi
@@ -16,6 +16,10 @@ curl --location --cookie --verbose \
 	-H "User-Agent: QGIS" -H "Authorization: Basic "$TOKEN \
 	--output $SHPZIP \
 	"$URL"
+if [[ $? -ne 0 ]]; then
+	echo "curl failed with: $?"
+	exit $?
+fi
 
 echo "Unzipping downloaded shapefile"
 unzip -d shp "$SHPZIP"
