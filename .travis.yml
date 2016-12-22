@@ -1,8 +1,11 @@
 language: python
 
+before_install:
+  - sudo apt-get -qq update
+
 install:
   - git clone https://github.com/pnorman/ogr2osm
-  - sudo apt-get install python-gdal
+  - sudo apt-get install python-gdal curl
 
 script:
   - ./mrwa2osm.sh
