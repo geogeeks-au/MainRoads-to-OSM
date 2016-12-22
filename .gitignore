@@ -1,2 +1,6 @@
 *.pbf
 *-runner.sh
+/ogr2osm
+/shp
+
+

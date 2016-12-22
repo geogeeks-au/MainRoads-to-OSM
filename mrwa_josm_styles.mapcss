@@ -1,0 +1,11 @@
+way[cwy=Single] 
+{
+    text: auto;
+    width: 3;
+    color: #c0c0c0;
+    text: "road_name";
+    text-position: line;
+    text-offset: 14;
+    font-size: 16;
+    font-color: lightyellow;
+}
