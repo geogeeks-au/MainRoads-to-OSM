@@ -1,7 +1,12 @@
+language: python
+
 install:
-- git clone https://github.com/pnorman/ogr2osm
+  - git clone https://github.com/pnorman/ogr2osm
+  - pip install osgeo
+
 script:
-- ./mrwa2osm.sh
+  - ./mrwa2osm.sh
+
 env:
   matrix:
   - secure: jqlE0uf2Fv0MjcUJJX7B2Q3OPbt9rzuc+6L+R/VjO4fjQ45/COfnGaaWmiHt6QOXovFvE3CqTxlrNlLU5JzJjPrL0r6WVVtdTiO3Y0DkU3Y8iLCsxnXj++IE+L7C6XwOSYIxvZgSX6IyoVsVGHm9FUGcKufsBummGPdngrKD5Sk9iZWVSmhRX6ihizNEgT7Sqv4tFQfDFa04sTs+fpd1LltL2CqWO2Eem+hpehssW2j7DtSIGHs9FIWWTP7RPYtHzRdEMsmIQeAeNfA4G1w7mb2GVLLm4pD2QYjn6Ycum2qM1xYJH/VaNolm4WsIls63UiLsChPtmMnokw0jvv1ua4EGNxCcgRXOXblu4OOfoSSX8PwUx40qoTtZiXisHRDbmCoM6XKC3wDgnsS/xvUI1h5E+C+UHQZVAVbg2iOeUA9D0Zi9ZKTTBhqADHlNdn9YOUl8u0iRn6XwcZuc3bs/hB331h3GdiFiP8syyAzRlVzDmAvs0PAdKSIh+PO81bVO3kmYCJp6E880tLQ1pYEJ5l8ubpTj4eqPJ4071w7G1heBZrJcXD7Iv5lQM5jgRtM5kcPBY7Ak7CfZkiwT1f+FviXIh4LsS05ve8F07auq8tL33LyI8cpmxYaopzjuQKrrx17LP3g3yJAIiUIw4OQvvmbVUBoakjyw6vrWYVVUQGg=

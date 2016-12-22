@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ -z $SLIP_USER -o -z $SLIP_PASS ]; then
+if (test -z $SLIP_USER -o -z $SLIP_PASS); then
 	echo "Please set SLIP_USER and SLIP_PASS env vars"
 	exit 1
 fi
