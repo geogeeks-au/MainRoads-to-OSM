@@ -19,7 +19,7 @@ if [[ $? -ne 0 ]]; then
 	exit $?
 fi
 
-## Check size in Mb
+## Check size in Mb.
 ZIPSIZE=$(du -m "$SHPZIP" | cut -f 1)
 if [[ $ZIPSIZE < 20 ]]; then
 	echo "Zip file was not large enough (only $ZIPSIZE Mb). Contents:"
