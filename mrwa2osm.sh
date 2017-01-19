@@ -41,4 +41,6 @@ git config user.name "Geogeeks (Travis CI)"
 git config user.email "geogeeks.perth@gmail.com"
 git add "$OSMFILE"
 git commit -m"Updated from Slip"
+echo "Pushing to Github"
+git log
 git push "https://${GH_TOKEN}@github.com/geogeeks-au/MainRoads-to-OSM.git" master:master
