@@ -38,7 +38,7 @@ python ogr2osm/ogr2osm.py shp/RoadNetworkMRWA_514_1.shp -o "$OSMFILE"
 
 ## Send to Github.
 git config user.name "Geogeeks (Travis CI)"
-git config user.email "geogeeks.perth@gmail.com"
+git config user.email "sam@samwilson.id.au"
 git add "$OSMFILE"
 git commit -m"Updated from Slip"
 echo "Pushing to Github"
