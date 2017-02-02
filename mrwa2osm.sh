@@ -38,17 +38,18 @@ OSMFILE="gh-pages/RoadNetworkMRWA_514.osm"
 python ogr2osm/ogr2osm.py shp/RoadNetworkMRWA_514_1.shp -o "$OSMFILE"
 
 ## Zip.
-ZIPFILE="docs/RoadNetworkMRWA_514.zip"
-zip "$ZIPFILE" "$OSMFILE"
+ZIPFILE="RoadNetworkMRWA_514.zip"
+zip "gh-pages/$ZIPFILE" "$OSMFILE"
 
 ## Send to Github.
 cd gh-pages
 cp ../docs/index.html .
+cp ../mrwa_josm_styles.mapcss .
 git init
 git config user.name "Geogeeks (Travis CI)"
 git config user.email "sam@samwilson.id.au"
 git checkout -b gh-pages
-git add "index.html" "$ZIPFILE"
+git add "index.html" "$ZIPFILE" "mrwa_josm_styles.mapcss"
 git commit -m"Updated from Slip"
 echo "Pushing to Github"
 git push -f "https://${GH_TOKEN}@github.com/geogeeks-au/MainRoads-to-OSM.git" gh-pages:gh-pages
