@@ -32,8 +32,9 @@ echo "Unzipping downloaded shapefile"
 unzip -d shp "$SHPZIP"
 
 ## Convert.
+mkdir gh-pages
 echo "Converting to OSM format"
-OSMFILE="docs/RoadNetworkMRWA_514.osm"
+OSMFILE="gh-pages/RoadNetworkMRWA_514.osm"
 python ogr2osm/ogr2osm.py shp/RoadNetworkMRWA_514_1.shp -o "$OSMFILE"
 
 ## Zip.
@@ -41,10 +42,13 @@ ZIPFILE="docs/RoadNetworkMRWA_514.zip"
 zip "$ZIPFILE" "$OSMFILE"
 
 ## Send to Github.
+cd gh-pages
+cp ../docs/index.html .
+git init
 git config user.name "Geogeeks (Travis CI)"
 git config user.email "sam@samwilson.id.au"
-git checkout master
-git add "$ZIPFILE"
+git checkout -b gh-pages
+git add "index.html" "$ZIPFILE"
 git commit -m"Updated from Slip"
 echo "Pushing to Github"
-git push -f "https://${GH_TOKEN}@github.com/geogeeks-au/MainRoads-to-OSM.git" master:master
+git push -f "https://${GH_TOKEN}@github.com/geogeeks-au/MainRoads-to-OSM.git" gh-pages:gh-pages
